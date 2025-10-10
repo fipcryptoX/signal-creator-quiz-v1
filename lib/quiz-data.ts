@@ -22,7 +22,7 @@ export const quizQuestions: Question[] = [
   },
   {
     id: 2,
-    question: "How do you approach content volume vs. quality?",
+    question: "How do you balance volume and quality?",
     answers: [
       { text: "I post as much as possible, daily if needed", score: 1 },
       { text: "I follow algorithms and trending formats", score: 2 },
@@ -72,7 +72,7 @@ export const quizQuestions: Question[] = [
   },
   {
     id: 7,
-    question: "What's your view on money-making from content?",
+    question: "What's your view on monetizing content?",
     answers: [
       { text: "Grab short-term cash grabs, whatever works now", score: 1 },
       { text: "Monetise fast before attention fades", score: 2 },

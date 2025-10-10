@@ -3,18 +3,19 @@
 import { Card } from "@/components/ui/card"
 import { getLeaderboard } from "@/lib/leaderboard"
 import { useEffect, useState } from "react"
+import Image from "next/image"
 
 interface LeaderboardProps {
-  currentUser?: string
+  currentUserFid?: number
   currentTimestamp?: number
 }
 
-export function Leaderboard({ currentUser, currentTimestamp }: LeaderboardProps) {
+export function Leaderboard({ currentUserFid, currentTimestamp }: LeaderboardProps) {
   const [leaderboard, setLeaderboard] = useState(getLeaderboard())
 
   useEffect(() => {
     setLeaderboard(getLeaderboard())
-  }, [currentUser, currentTimestamp])
+  }, [currentUserFid, currentTimestamp])
 
   return (
     <Card className="p-6 md:p-8">
@@ -25,18 +26,18 @@ export function Leaderboard({ currentUser, currentTimestamp }: LeaderboardProps)
       ) : (
         <div className="space-y-2">
           {leaderboard.slice(0, 20).map((entry, index) => {
-            const isCurrentUser = entry.username === currentUser && entry.timestamp === currentTimestamp
+            const isCurrentUser = entry.fid === currentUserFid && entry.timestamp === currentTimestamp
 
             return (
               <div
-                key={`${entry.username}-${entry.timestamp}`}
+                key={`${entry.fid || entry.username}-${entry.timestamp}`}
                 className={`flex items-center justify-between p-4 rounded-lg transition-colors ${
                   isCurrentUser ? "bg-primary/10 border-2 border-primary" : "bg-accent/50"
                 }`}
               >
                 <div className="flex items-center gap-4">
                   <div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center font-bold ${
+                    className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
                       index === 0
                         ? "bg-yellow-500 text-yellow-950"
                         : index === 1
@@ -48,6 +49,24 @@ export function Leaderboard({ currentUser, currentTimestamp }: LeaderboardProps)
                   >
                     {index + 1}
                   </div>
+
+                  {/* Profile Picture */}
+                  {entry.profilePicture ? (
+                    <div className="relative w-10 h-10 rounded-full overflow-hidden bg-muted">
+                      <Image
+                        src={entry.profilePicture}
+                        alt={`${entry.username}'s profile`}
+                        fill
+                        className="object-cover"
+                        unoptimized
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground font-bold">
+                      {entry.username.charAt(0).toUpperCase()}
+                    </div>
+                  )}
+
                   <span className={`font-medium ${isCurrentUser ? "text-primary font-bold" : ""}`}>
                     {entry.username}
                     {isCurrentUser && " (You)"}

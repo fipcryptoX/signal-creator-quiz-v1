@@ -4,12 +4,12 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Soft off-white background */
-  --background: oklch(0.98 0.005 90);
+  /* Warm beige background #FAF4E6 */
+  --background: #FAF4E6;
   --foreground: oklch(0.2 0.01 260);
 
   /* Card with subtle warmth */
-  --card: oklch(1 0 0);
+  --card: #F7F9FA;
   --card-foreground: oklch(0.2 0.01 260);
 
   --popover: oklch(1 0 0);
