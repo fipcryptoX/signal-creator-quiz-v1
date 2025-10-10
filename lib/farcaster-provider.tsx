@@ -105,8 +105,15 @@ export function FarcasterProvider({ children }: FarcasterProviderProps) {
         // This uses environment checks and postMessage communication
         // Timeout after 5 seconds to avoid hanging (increased from 3s)
         console.log("🔍 Calling sdk.isInMiniApp()...")
-        const inMiniApp = await sdk.isInMiniApp({ timeoutMs: 5000 })
+        let inMiniApp = await sdk.isInMiniApp({ timeoutMs: 5000 })
         console.log("🔍 Detection result:", inMiniApp)
+
+        // TESTING OVERRIDE: Force mini app mode when in iframe for development
+        const isInIframe = window.self !== window.top
+        if (!inMiniApp && isInIframe) {
+          console.log("⚠️ TESTING MODE: Forcing mini app detection (in iframe)")
+          inMiniApp = true
+        }
 
         if (!mounted) return
 
