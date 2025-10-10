@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   other: {
     // Farcaster Frame meta tag for embedding
     'fc:frame': 'vNext',
-    'fc:frame:image': 'https://annamae-lyrical-leadingly.ngrok-free.dev/og-image.png',
+    'fc:frame:image': 'https://signal-creator-quiz-v1-pdml.vercel.app/og-image.png',
     'fc:frame:button:1': 'Take Quiz',
-    'fc:frame:post_url': 'https://annamae-lyrical-leadingly.ngrok-free.dev',
+    'fc:frame:post_url': 'https://signal-creator-quiz-v1-pdml.vercel.app',
   },
 }
 
@@ -43,9 +43,9 @@ export default function RootLayout({
       <head>
         {/* Additional Farcaster meta tags */}
         <meta name="fc:frame" content="vNext" />
-        <meta name="fc:frame:image" content="https://annamae-lyrical-leadingly.ngrok-free.dev/og-image.png" />
+        <meta name="fc:frame:image" content="https://signal-creator-quiz-v1-pdml.vercel.app/og-image.png" />
         <meta name="fc:frame:button:1" content="Take Quiz" />
-        <meta name="fc:frame:post_url" content="https://annamae-lyrical-leadingly.ngrok-free.dev" />
+        <meta name="fc:frame:post_url" content="https://signal-creator-quiz-v1-pdml.vercel.app" />
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
         {/*

@@ -7,9 +7,9 @@
   "miniapp": {
     "version": "1",
     "name": "Signal Creator Quiz",
-    "homeUrl": "https://annamae-lyrical-leadingly.ngrok-free.dev",
-    "iconUrl": "https://annamae-lyrical-leadingly.ngrok-free.dev/icon.png",
-    "splashImageUrl": "https://annamae-lyrical-leadingly.ngrok-free.dev/splash.png",
+    "homeUrl": "https://signal-creator-quiz-v1-pdml.vercel.app",
+    "iconUrl": "https://signal-creator-quiz-v1-pdml.vercel.app/icon.png",
+    "splashImageUrl": "https://signal-creator-quiz-v1-pdml.vercel.app/splash.png",
     "splashBackgroundColor": "#000000",
     "subtitle": "Discover your content creator type",
     "description": "Take the Signal Creator Quiz to discover whether you're a noise or signal creator. Get personalized insights about your content strategy.",

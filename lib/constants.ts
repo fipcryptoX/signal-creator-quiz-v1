@@ -29,7 +29,7 @@ export const NETWORK_CONFIG = {
 // Farcaster Mini App configuration
 export const MINIAPP_CONFIG = {
   // Your app's home URL (update this with your actual domain)
-  HOME_URL: "https://annamae-lyrical-leadingly.ngrok-free.dev",
+  HOME_URL: "https://signal-creator-quiz-v1-pdml.vercel.app",
 
   // App metadata
   APP_NAME: "Signal Creator Quiz",
