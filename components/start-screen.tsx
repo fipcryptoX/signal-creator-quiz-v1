@@ -12,9 +12,9 @@ export function StartScreen({ onStart }: StartScreenProps) {
     <div className="min-h-screen flex items-center justify-center p-4">
       <Card className="w-full max-w-2xl p-8 md:p-12 text-center space-y-6">
         <div className="space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-balance">🧭 Signal Creator Quiz</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-balance">Signal Creator Quiz</h1>
           <p className="text-lg md:text-xl text-muted-foreground text-pretty leading-relaxed">
-            Answer 10 questions to discover if you're a Signal or Noise creator.
+            Are you creating Signal or just adding to the Noise? Take this 10-question quiz to find out.
           </p>
         </div>
 

@@ -1,0 +1,26 @@
+{
+  "accountAssociation": {
+    "header": "REPLACE_WITH_HEADER_FROM_MANIFEST_TOOL",
+    "payload": "REPLACE_WITH_PAYLOAD_FROM_MANIFEST_TOOL",
+    "signature": "REPLACE_WITH_SIGNATURE_FROM_MANIFEST_TOOL"
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "Signal Creator Quiz",
+    "homeUrl": "https://annamae-lyrical-leadingly.ngrok-free.dev",
+    "iconUrl": "https://annamae-lyrical-leadingly.ngrok-free.dev/icon.png",
+    "splashImageUrl": "https://annamae-lyrical-leadingly.ngrok-free.dev/splash.png",
+    "splashBackgroundColor": "#000000",
+    "subtitle": "Discover your content creator type",
+    "description": "Take the Signal Creator Quiz to discover whether you're a noise or signal creator. Get personalized insights about your content strategy.",
+    "primaryCategory": "entertainment",
+    "tags": ["quiz", "content", "creator", "assessment"],
+    "requiredChains": [
+      {
+        "chainId": 8453,
+        "name": "Base"
+      }
+    ],
+    "requiredCapabilities": ["wallet"]
+  }
+}

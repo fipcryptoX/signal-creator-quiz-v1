@@ -2,6 +2,8 @@ export interface LeaderboardEntry {
   username: string
   score: number
   timestamp: number
+  profilePicture?: string // Farcaster profile picture URL
+  fid?: number // Farcaster ID
 }
 
 const LEADERBOARD_KEY = "signal-quiz-leaderboard"
@@ -19,12 +21,19 @@ export function getLeaderboard(): LeaderboardEntry[] {
   }
 }
 
-export function addToLeaderboard(username: string, score: number): void {
+export function addToLeaderboard(
+  username: string,
+  score: number,
+  profilePicture?: string,
+  fid?: number
+): void {
   const leaderboard = getLeaderboard()
   leaderboard.push({
     username,
     score,
     timestamp: Date.now(),
+    profilePicture,
+    fid,
   })
 
   // Sort by score descending
@@ -36,8 +45,8 @@ export function addToLeaderboard(username: string, score: number): void {
   localStorage.setItem(LEADERBOARD_KEY, JSON.stringify(trimmed))
 }
 
-export function getUserRank(username: string, timestamp: number): number {
+export function getUserRank(fid: number | undefined, timestamp: number): number {
   const leaderboard = getLeaderboard()
-  const index = leaderboard.findIndex((entry) => entry.username === username && entry.timestamp === timestamp)
+  const index = leaderboard.findIndex((entry) => entry.fid === fid && entry.timestamp === timestamp)
   return index + 1
 }

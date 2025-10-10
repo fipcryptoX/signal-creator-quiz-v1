@@ -3,23 +3,28 @@
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import type { Question } from "@/lib/quiz-data"
-import { useState } from "react"
+import { ArrowLeft } from "lucide-react"
 
 interface QuestionScreenProps {
   question: Question
   currentQuestion: number
   totalQuestions: number
   onAnswer: (score: number) => void
+  onBack: () => void
+  canGoBack: boolean
 }
 
-export function QuestionScreen({ question, currentQuestion, totalQuestions, onAnswer }: QuestionScreenProps) {
-  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
-
-  const handleNext = () => {
-    if (selectedAnswer !== null) {
-      onAnswer(selectedAnswer)
-      setSelectedAnswer(null)
-    }
+export function QuestionScreen({
+  question,
+  currentQuestion,
+  totalQuestions,
+  onAnswer,
+  onBack,
+  canGoBack,
+}: QuestionScreenProps) {
+  const handleAnswerClick = (score: number) => {
+    // Immediately go to next question when answer is clicked
+    onAnswer(score)
   }
 
   return (
@@ -38,19 +43,15 @@ export function QuestionScreen({ question, currentQuestion, totalQuestions, onAn
         </div>
 
         {/* Question card */}
-        <Card className="p-8 md:p-10">
+        <Card className="p-8 md:p-10 text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-balance leading-relaxed">{question.question}</h2>
 
           <div className="space-y-4">
             {question.answers.map((answer, index) => (
               <button
                 key={index}
-                onClick={() => setSelectedAnswer(answer.score)}
-                className={`w-full p-6 rounded-xl text-left transition-all duration-200 border-2 ${
-                  selectedAnswer === answer.score
-                    ? "border-primary bg-accent shadow-md scale-[1.02]"
-                    : "border-border bg-card hover:border-primary/50 hover:bg-accent/50"
-                }`}
+                onClick={() => handleAnswerClick(answer.score)}
+                className="w-full p-6 rounded-xl text-center transition-all duration-200 border-2 border-border bg-card hover:border-primary hover:bg-accent hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
               >
                 <p className="text-base md:text-lg text-pretty leading-relaxed">{answer.text}</p>
               </button>
@@ -58,15 +59,17 @@ export function QuestionScreen({ question, currentQuestion, totalQuestions, onAn
           </div>
         </Card>
 
-        {/* Next button */}
+        {/* Back button - always render to prevent layout shift */}
         <div className="flex justify-center">
           <Button
-            onClick={handleNext}
-            disabled={selectedAnswer === null}
+            onClick={onBack}
+            disabled={!canGoBack}
+            variant="outline"
             size="lg"
-            className="px-12 py-6 text-lg rounded-full"
+            className={`px-12 py-6 text-lg rounded-full gap-2 ${!canGoBack ? "invisible" : ""}`}
           >
-            Next
+            <ArrowLeft className="w-5 h-5" />
+            Back
           </Button>
         </div>
       </div>
