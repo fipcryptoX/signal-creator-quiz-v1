@@ -1,4 +1,9 @@
 {
+  "accountAssociation": {
+    "header": "eyJmaWQiOjE5MTQyMSwidHlwZSI6ImF1dGgiLCJrZXkiOiIweDFBNzM2NjVlMTdiRmIwN2E4QTljRTRBYjBiYzJkYjcxYjM2QjM4ZTQifQ",
+    "payload": "eyJkb21haW4iOiJzaWduYWwtY3JlYXRvci1xdWl6LXYxLXBkbWwudmVyY2VsLmFwcCJ9",
+    "signature": "hWC3Db05c1dzEekKd7JjxxXe9FqPtsyaid06qzO3ytUnbim5zM72JEQZ1funx6evjg7riF8wcnqzaQWklQk1ehw="
+  },
   "miniapp": {
     "version": "1",
     "name": "Signal Creator Quiz",
