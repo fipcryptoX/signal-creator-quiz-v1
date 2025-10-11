@@ -11,9 +11,9 @@ interface StartScreenProps {
 export function StartScreen({ onStart }: StartScreenProps) {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">
-      <Card className="w-full max-w-2xl p-8 md:p-12 text-center space-y-6">
+      <Card className="w-full max-w-2xl p-8 md:p-12 text-center space-y-4">
         <div className="space-y-4">
-          <div className="flex justify-center mb-2">
+          <div className="flex justify-center mb-4">
             <Image
               src="/signal-quiz-logo.png"
               alt="Signal Creator Quiz Logo"
@@ -29,7 +29,7 @@ export function StartScreen({ onStart }: StartScreenProps) {
           </div>
         </div>
 
-        <div className="pt-2">
+        <div>
           <Button onClick={onStart} size="lg" className="text-lg px-8 py-6 rounded-full">
             Start Quiz
           </Button>

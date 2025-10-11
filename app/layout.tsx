@@ -49,11 +49,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Additional Farcaster meta tags */}
-        <meta name="fc:frame" content="vNext" />
-        <meta name="fc:frame:image" content="https://annamae-lyrical-leadingly.ngrok-free.dev/og-image.png" />
-        <meta name="fc:frame:button:1" content="Take Quiz" />
-        <meta name="fc:frame:post_url" content="https://annamae-lyrical-leadingly.ngrok-free.dev" />
+        {/* Farcaster Mini App Embed - 3:2 aspect ratio image for social sharing */}
+        <meta
+          name="fc:miniapp"
+          content='{"version":"1","imageUrl":"https://annamae-lyrical-leadingly.ngrok-free.dev/embed-image.png","button":{"title":"Take Quiz","action":{"type":"launch_miniapp","name":"Signal Creator Quiz","url":"https://annamae-lyrical-leadingly.ngrok-free.dev","splashImageUrl":"https://annamae-lyrical-leadingly.ngrok-free.dev/splash.png","splashBackgroundColor":"#000000"}}}'
+        />
+        {/* Backward compatibility */}
+        <meta
+          name="fc:frame"
+          content='{"version":"1","imageUrl":"https://annamae-lyrical-leadingly.ngrok-free.dev/embed-image.png","button":{"title":"Take Quiz","action":{"type":"launch_frame","name":"Signal Creator Quiz","url":"https://annamae-lyrical-leadingly.ngrok-free.dev","splashImageUrl":"https://annamae-lyrical-leadingly.ngrok-free.dev/splash.png","splashBackgroundColor":"#000000"}}}'
+        />
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
         {/*
