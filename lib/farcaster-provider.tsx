@@ -123,6 +123,15 @@ export function FarcasterProvider({ children }: FarcasterProviderProps) {
         const config = createWagmiConfig(inMiniApp)
         setWagmiConfig(config)
 
+        // Call ready() immediately to signal the app is loaded
+        // This should happen BEFORE accessing context to hide splash screen quickly
+        try {
+          sdk.actions.ready()
+          console.log("✅ Called sdk.actions.ready() - splash screen hidden")
+        } catch (err) {
+          console.log("⚠️ ready() call failed (expected in non-mini-app):", err)
+        }
+
         if (inMiniApp) {
           // Get the Farcaster context (user info, client info, etc.)
           console.log("🔍 Getting Farcaster context...")
@@ -179,15 +188,6 @@ export function FarcasterProvider({ children }: FarcasterProviderProps) {
       } finally {
         if (mounted) {
           setIsLoading(false)
-
-          // Call ready() AFTER loading is complete and content is ready to display
-          // This hides the splash screen and shows the app
-          try {
-            await sdk.actions.ready()
-            console.log("✅ Called sdk.actions.ready() - splash screen hidden")
-          } catch (err) {
-            console.log("⚠️ ready() call failed (expected in non-mini-app):", err)
-          }
         }
       }
     }
