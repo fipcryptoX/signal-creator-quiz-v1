@@ -1,15 +1,32 @@
 {
-  "version": "vNext",
   "accountAssociation": {
     "header": "eyJmaWQiOjE5MTQyMSwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDlhMDA4YkU0QTc2YTNGNWY5MkQzRDQ4YkMwMjkxY2FiYUMyYTMyMWEifQ",
     "payload": "eyJkb21haW4iOiJzaWduYWwtY3JlYXRvci1xdWl6LXYxLXBkbWwudmVyY2VsLmFwcCJ9",
     "signature": "MHgyMmY1MWI5NzJjNmFmYTQ1NmZmZTc1YjMyZjBlYmQzOWEzNzg1NzZiNTE4ZWQ0ODYyN2Q2OWUxNzM0ZDMzZDU4NzBiN2YwY2FlNDBkZDRkMDJhYmI5NmI1MjNlNzYyMDMyMTEyYjU4ZjUyYjZjNmFjMzBmNTEzMTcwOTVhZjUyMjFi"
   },
   "miniapp": {
+    "version": "1",
     "name": "Signal Creator Quiz",
-    "homeUrl": "https://signal-creator-quiz-v1-pdml.vercel.app",
     "iconUrl": "https://signal-creator-quiz-v1-pdml.vercel.app/icon.png",
+    "homeUrl": "https://signal-creator-quiz-v1-pdml.vercel.app",
+    "imageUrl": "https://signal-creator-quiz-v1-pdml.vercel.app/image.png",
+    "buttonTitle": "View Quiz",
     "splashImageUrl": "https://signal-creator-quiz-v1-pdml.vercel.app/splash.png",
-    "splashBackgroundColor": "#ffffff"
+    "splashBackgroundColor": "#3C6E71",
+    "webhookUrl": "https://signal-creator-quiz-v1-pdml.vercel.app/api/webhook",
+    "subtitle": "Know your creator type",
+    "description": "Discover if you're a Signal or Noise Creator by completing this 10-question quiz",
+    "primaryCategory": "social",
+    "tags": [
+      "social",
+      "creator",
+      "content",
+      "quiz"
+    ],
+    "tagline": "Know your creator type",
+    "ogTitle": "Signal Creator Quiz",
+    "ogDescription": "Discover if you're a Signal or Noise Creator by completing this 10-question quiz",
+    "ogImageUrl": "https://signal-creator-quiz-v1-pdml.vercel.app/og-image.png",
+    "castShareUrl": "https://signal-creator-quiz-v1-pdml.vercel.app"
   }
 }
