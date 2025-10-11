@@ -51,16 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Farcaster Mini App Embed - 1200x630 image for social sharing */}
-        <meta
-          name="fc:miniapp"
-          content='{"version":"1","imageUrl":"https://signal-creator-quiz-v1-pdml.vercel.app/image.png","button":{"title":"Take Quiz","action":{"type":"launch_miniapp","name":"Signal Creator Quiz","url":"https://signal-creator-quiz-v1-pdml.vercel.app","splashImageUrl":"https://signal-creator-quiz-v1-pdml.vercel.app/splash.png","splashBackgroundColor":"#3C6E71"}}}'
-        />
-        {/* Backward compatibility */}
-        <meta
-          name="fc:frame"
-          content='{"version":"1","imageUrl":"https://signal-creator-quiz-v1-pdml.vercel.app/image.png","button":{"title":"Take Quiz","action":{"type":"launch_frame","name":"Signal Creator Quiz","url":"https://signal-creator-quiz-v1-pdml.vercel.app","splashImageUrl":"https://signal-creator-quiz-v1-pdml.vercel.app/splash.png","splashBackgroundColor":"#3C6E71"}}}'
-        />
+        {/* Frame v2 meta tags are in metadata.other below */}
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
         {/*
