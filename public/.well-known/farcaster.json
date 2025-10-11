@@ -1,0 +1,9 @@
+{
+  "miniapp": {
+    "name": "Signal Creator Quiz",
+    "homeUrl": "https://signal-creator-quiz-v1-pdml.vercel.app",
+    "iconUrl": "https://signal-creator-quiz-v1-pdml.vercel.app/icon.png",
+    "splashImageUrl": "https://signal-creator-quiz-v1-pdml.vercel.app/splash.png",
+    "splashBackgroundColor": "#ffffff"
+  }
+}
