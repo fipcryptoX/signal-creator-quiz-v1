@@ -14,7 +14,8 @@
       "Bash(git push:*)",
       "Bash(for:*)",
       "Bash(do echo \"$img:\")",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(python3:*)"
     ],
     "deny": [],
     "ask": []
