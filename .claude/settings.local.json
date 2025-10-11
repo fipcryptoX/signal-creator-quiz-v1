@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout:*)",
+      "Bash(lsof:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm install)",
+      "Bash(ngrok:*)",
+      "Bash(pkill:*)",
+      "Bash(curl:*)",
+      "Bash(sips:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(for:*)",
+      "Bash(do echo \"$img:\")",
+      "Bash(done)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
