@@ -37,7 +37,9 @@ export const metadata: Metadata = {
     'fc:frame': 'vNext',
     'fc:frame:image': 'https://signal-creator-quiz-v1-pdml.vercel.app/image.png',
     'fc:frame:button:1': 'Take Quiz',
-    'fc:frame:post_url': 'https://signal-creator-quiz-v1-pdml.vercel.app',
+    'fc:frame:button:1:action': 'link',
+    'fc:frame:button:1:target': 'https://signal-creator-quiz-v1-pdml.vercel.app',
+    'fc:frame:post_url': 'https://signal-creator-quiz-v1-pdml.vercel.app/api/frame',
   },
 }
 
