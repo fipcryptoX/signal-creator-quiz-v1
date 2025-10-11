@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import type { Question } from "@/lib/quiz-data"
@@ -22,6 +23,11 @@ export function QuestionScreen({
   onBack,
   canGoBack,
 }: QuestionScreenProps) {
+  // Scroll to top whenever the question changes (instant for subtle transition)
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" })
+  }, [currentQuestion])
+
   const handleAnswerClick = (score: number) => {
     // Immediately go to next question when answer is clicked
     onAnswer(score)

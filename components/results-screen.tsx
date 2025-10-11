@@ -76,13 +76,19 @@ export function ResultsScreen({ score, onRestart }: ResultsScreenProps) {
   const userRank = submitted && userTimestamp && context?.user ? getUserRank(context.user.fid, userTimestamp) : null
 
   // Debug logging
-  console.log("🔍 Payment Gate Debug:", {
+  console.log("🔍 Results Screen Debug:", {
     isRevealed,
     isMiniApp,
     hasContext: !!context,
     hasUser: !!context?.user,
+    user: context?.user,
     shouldShowGate: !isRevealed && isMiniApp,
   })
+
+  if (!context?.user) {
+    console.warn("⚠️ No user context available - Add Score button will not show")
+    console.log("📊 Full context:", context)
+  }
 
   /**
    * PAYMENT GATE: If score is not revealed yet, show payment UI
@@ -184,6 +190,8 @@ export function ResultsScreen({ score, onRestart }: ResultsScreenProps) {
             </div>
           </div>
 
+          {/* ARCHIVED: Add to Leaderboard functionality */}
+          {/*
           {!submitted ? (
             <div className="space-y-4 pt-4">
               {context?.user ? (
@@ -213,6 +221,7 @@ export function ResultsScreen({ score, onRestart }: ResultsScreenProps) {
               </p>
             </div>
           )}
+          */}
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
             <Button onClick={handleShare} variant="outline" size="lg" className="rounded-full bg-transparent">
@@ -221,11 +230,14 @@ export function ResultsScreen({ score, onRestart }: ResultsScreenProps) {
             <Button onClick={onRestart} variant="outline" size="lg" className="rounded-full bg-transparent">
               Retake Quiz
             </Button>
+            {/* ARCHIVED: View Leaderboard button */}
+            {/*
             {submitted && (
               <Button onClick={() => setShowLeaderboard(!showLeaderboard)} size="lg" className="rounded-full">
                 {showLeaderboard ? "Hide" : "View"} Leaderboard
               </Button>
             )}
+            */}
           </div>
 
           <div className="pt-6 border-t border-border mt-6">
@@ -247,9 +259,12 @@ export function ResultsScreen({ score, onRestart }: ResultsScreenProps) {
           </div>
         </Card>
 
+        {/* ARCHIVED: Leaderboard display */}
+        {/*
         {showLeaderboard && (
           <Leaderboard currentUserFid={context?.user?.fid} currentTimestamp={userTimestamp || undefined} />
         )}
+        */}
       </div>
     </div>
   )

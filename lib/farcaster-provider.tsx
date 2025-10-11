@@ -137,10 +137,30 @@ export function FarcasterProvider({ children }: FarcasterProviderProps) {
               client: context.client,
             })
           } catch (contextError) {
-            console.warn("⚠️ Could not access Farcaster context (missing valid manifest signature)")
-            console.warn("⚠️ User features (leaderboard, sharing) will be disabled")
-            console.warn("⚠️ Payment gate will still work!")
-            // Leave context as null - app will work without user context
+            console.error("❌ Could not access Farcaster context:", contextError)
+            console.warn("⚠️ This usually means:")
+            console.warn("   1. Manifest signature doesn't match current domain")
+            console.warn("   2. App is not opened in official Farcaster client")
+            console.warn("⚠️ Current domain:", window.location.hostname)
+
+            // TESTING OVERRIDE: Always provide mock context when real context fails
+            // This allows testing of user features (leaderboard, sharing) during development
+            console.log("⚠️ TESTING MODE: Using mock Farcaster context")
+            const mockContext = {
+              user: {
+                fid: 191421,
+                username: "test_user",
+                displayName: "Test User",
+                pfpUrl: "https://i.imgur.com/gF0OJ0S.png",
+              },
+              client: {
+                clientFid: 9152,
+                added: true,
+              },
+            }
+            setFarcasterContext(mockContext as any)
+            console.log("✅ Mock context set for testing")
+            console.log("✅ User features (leaderboard, sharing) will work with mock data")
           }
         } else {
           console.log("ℹ️ Running in regular web mode (not a Farcaster Mini App)")
