@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://annamae-lyrical-leadingly.ngrok-free.dev/og-image.png',
+        url: 'https://signal-creator-quiz-v1-pdml.vercel.app/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Signal Creator Quiz',
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
   other: {
     // Farcaster Frame meta tag for embedding
     'fc:frame': 'vNext',
-    'fc:frame:image': 'https://annamae-lyrical-leadingly.ngrok-free.dev/og-image.png',
+    'fc:frame:image': 'https://signal-creator-quiz-v1-pdml.vercel.app/image.png',
     'fc:frame:button:1': 'Take Quiz',
-    'fc:frame:post_url': 'https://annamae-lyrical-leadingly.ngrok-free.dev',
+    'fc:frame:post_url': 'https://signal-creator-quiz-v1-pdml.vercel.app',
   },
 }
 
@@ -49,15 +49,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Farcaster Mini App Embed - 3:2 aspect ratio image for social sharing */}
+        {/* Farcaster Mini App Embed - 1200x630 image for social sharing */}
         <meta
           name="fc:miniapp"
-          content='{"version":"1","imageUrl":"https://annamae-lyrical-leadingly.ngrok-free.dev/embed-image.png","button":{"title":"Take Quiz","action":{"type":"launch_miniapp","name":"Signal Creator Quiz","url":"https://annamae-lyrical-leadingly.ngrok-free.dev","splashImageUrl":"https://annamae-lyrical-leadingly.ngrok-free.dev/splash.png","splashBackgroundColor":"#000000"}}}'
+          content='{"version":"1","imageUrl":"https://signal-creator-quiz-v1-pdml.vercel.app/image.png","button":{"title":"Take Quiz","action":{"type":"launch_miniapp","name":"Signal Creator Quiz","url":"https://signal-creator-quiz-v1-pdml.vercel.app","splashImageUrl":"https://signal-creator-quiz-v1-pdml.vercel.app/splash.png","splashBackgroundColor":"#3C6E71"}}}'
         />
         {/* Backward compatibility */}
         <meta
           name="fc:frame"
-          content='{"version":"1","imageUrl":"https://annamae-lyrical-leadingly.ngrok-free.dev/embed-image.png","button":{"title":"Take Quiz","action":{"type":"launch_frame","name":"Signal Creator Quiz","url":"https://annamae-lyrical-leadingly.ngrok-free.dev","splashImageUrl":"https://annamae-lyrical-leadingly.ngrok-free.dev/splash.png","splashBackgroundColor":"#000000"}}}'
+          content='{"version":"1","imageUrl":"https://signal-creator-quiz-v1-pdml.vercel.app/image.png","button":{"title":"Take Quiz","action":{"type":"launch_frame","name":"Signal Creator Quiz","url":"https://signal-creator-quiz-v1-pdml.vercel.app","splashImageUrl":"https://signal-creator-quiz-v1-pdml.vercel.app/splash.png","splashBackgroundColor":"#3C6E71"}}}'
         />
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
