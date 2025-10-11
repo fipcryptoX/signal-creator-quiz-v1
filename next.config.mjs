@@ -19,6 +19,16 @@ const nextConfig = {
   experimental: {
     allowedDevOrigins: ['**.ngrok-free.app', '**.ngrok.io', '**.ngrok-free.dev'],
   },
+  // Redirect to Farcaster Hosted Manifest
+  async redirects() {
+    return [
+      {
+        source: '/.well-known/farcaster.json',
+        destination: 'https://api.farcaster.xyz/miniapps/hosted-manifest/0199d29e-aa60-d1ac-fe3a-ffda9631b947',
+        permanent: false,
+      },
+    ]
+  },
 }
 
 export default nextConfig
