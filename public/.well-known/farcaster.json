@@ -14,6 +14,7 @@
     "splashImageUrl": "https://signal-creator-quiz-v1-pdml.vercel.app/splash.png",
     "splashBackgroundColor": "#3C6E71",
     "webhookUrl": "https://signal-creator-quiz-v1-pdml.vercel.app/api/webhook",
+    "noindex": false,
     "subtitle": "Know your creator type",
     "description": "Discover if you're a Signal or Noise Creator by completing this 10-question quiz",
     "primaryCategory": "social",
