@@ -1,4 +1,5 @@
 {
+  "version": "vNext",
   "accountAssociation": {
     "header": "eyJmaWQiOjE5MTQyMSwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDlhMDA4YkU0QTc2YTNGNWY5MkQzRDQ4YkMwMjkxY2FiYUMyYTMyMWEifQ",
     "payload": "eyJkb21haW4iOiJzaWduYWwtY3JlYXRvci1xdWl6LXYxLXBkbWwudmVyY2VsLmFwcCJ9",
