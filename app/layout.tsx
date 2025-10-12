@@ -40,6 +40,19 @@ export const metadata: Metadata = {
     'fc:frame:button:1:action': 'link',
     'fc:frame:button:1:target': 'https://signal-creator-quiz-v1-pdml.vercel.app',
     'fc:frame:post_url': 'https://signal-creator-quiz-v1-pdml.vercel.app/api/frame',
+    // Mini app embed metadata for social sharing
+    'fc:miniapp': JSON.stringify({
+      version: 'next',
+      imageUrl: 'https://signal-creator-quiz-v1-pdml.vercel.app/image.png',
+      button: {
+        title: 'Take Quiz',
+        action: {
+          type: 'launch_frame',
+          name: 'Signal Creator Quiz',
+          url: 'https://signal-creator-quiz-v1-pdml.vercel.app',
+        },
+      },
+    }),
   },
 }
 
