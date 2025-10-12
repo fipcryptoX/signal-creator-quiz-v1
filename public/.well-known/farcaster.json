@@ -7,11 +7,11 @@
   "miniapp": {
     "version": "1",
     "name": "Signal Creator Quiz",
-    "iconUrl": "https://signal-creator-quiz-v1-pdml.vercel.app/icon.png",
+    "iconUrl": "https://signal-creator-quiz-v1-pdml.vercel.app/icon.png?v=2",
     "homeUrl": "https://signal-creator-quiz-v1-pdml.vercel.app",
     "imageUrl": "https://signal-creator-quiz-v1-pdml.vercel.app/image.png",
     "buttonTitle": "View Quiz",
-    "splashImageUrl": "https://signal-creator-quiz-v1-pdml.vercel.app/splash.png",
+    "splashImageUrl": "https://signal-creator-quiz-v1-pdml.vercel.app/splash.png?v=2",
     "splashBackgroundColor": "#3C6E71",
     "webhookUrl": "https://signal-creator-quiz-v1-pdml.vercel.app/api/webhook",
     "noindex": false,
