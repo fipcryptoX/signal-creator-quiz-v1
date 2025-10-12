@@ -43,7 +43,7 @@ export const metadata: Metadata = {
           type: 'launch_frame',
           name: 'Signal Creator Quiz',
           url: 'https://signal-creator-quiz-v1-pdml.vercel.app',
-          splashImageUrl: 'https://signal-creator-quiz-v1-pdml.vercel.app/splash.png?v=2',
+          splashImageUrl: 'https://signal-creator-quiz-v1-pdml.vercel.app/splash.png?v=3',
           splashBackgroundColor: '#3C6E71',
         },
       },
