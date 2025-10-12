@@ -184,7 +184,7 @@ export function ResultsScreen({ score, onRestart }: ResultsScreenProps) {
           {/* Success banner if payment was just completed */}
           {isRevealed && isMiniApp && (
             <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4 mb-4">
-              <p className="text-sm text-green-600 font-medium">✓ Success, check your results below</p>
+              <p className="text-sm text-green-600 font-medium">Success, check your results below</p>
             </div>
           )}
 
