@@ -33,16 +33,9 @@ export const metadata: Metadata = {
   },
   // Add other meta tags as needed
   other: {
-    // Farcaster Frame v2 metadata for embedding in Farcaster
-    'fc:frame': 'vNext',
-    'fc:frame:image': 'https://signal-creator-quiz-v1-pdml.vercel.app/image.png',
-    'fc:frame:image:aspect_ratio': '3:2',
-    'fc:frame:button:1': 'Take Quiz',
-    'fc:frame:button:1:action': 'launch_frame',
-    'fc:frame:button:1:target': 'https://signal-creator-quiz-v1-pdml.vercel.app',
-    // Mini app embed metadata for social sharing in Base
+    // Mini app embed metadata for Farcaster and Base
     'fc:miniapp': JSON.stringify({
-      version: 'next',
+      version: '1',
       imageUrl: 'https://signal-creator-quiz-v1-pdml.vercel.app/image.png',
       button: {
         title: 'Take Quiz',
@@ -50,6 +43,8 @@ export const metadata: Metadata = {
           type: 'launch_frame',
           name: 'Signal Creator Quiz',
           url: 'https://signal-creator-quiz-v1-pdml.vercel.app',
+          splashImageUrl: 'https://signal-creator-quiz-v1-pdml.vercel.app/splash.png',
+          splashBackgroundColor: '#3C6E71',
         },
       },
     }),
