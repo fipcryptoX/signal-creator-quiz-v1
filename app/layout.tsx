@@ -33,14 +33,14 @@ export const metadata: Metadata = {
   },
   // Add other meta tags as needed
   other: {
-    // Farcaster Frame meta tag for embedding
+    // Farcaster Frame v2 metadata for embedding in Farcaster
     'fc:frame': 'vNext',
     'fc:frame:image': 'https://signal-creator-quiz-v1-pdml.vercel.app/image.png',
+    'fc:frame:image:aspect_ratio': '3:2',
     'fc:frame:button:1': 'Take Quiz',
-    'fc:frame:button:1:action': 'link',
+    'fc:frame:button:1:action': 'launch_frame',
     'fc:frame:button:1:target': 'https://signal-creator-quiz-v1-pdml.vercel.app',
-    'fc:frame:post_url': 'https://signal-creator-quiz-v1-pdml.vercel.app/api/frame',
-    // Mini app embed metadata for social sharing
+    // Mini app embed metadata for social sharing in Base
     'fc:miniapp': JSON.stringify({
       version: 'next',
       imageUrl: 'https://signal-creator-quiz-v1-pdml.vercel.app/image.png',
