@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     // Mini app embed metadata for Farcaster and Base
     'fc:miniapp': JSON.stringify({
       version: '1',
-      imageUrl: 'https://signal-creator-quiz-v1-pdml.vercel.app/image.png',
+      imageUrl: 'https://signal-creator-quiz-v1-pdml.vercel.app/embed-image.png',
       button: {
         title: 'Take Quiz',
         action: {
