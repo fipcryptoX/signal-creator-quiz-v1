@@ -45,15 +45,21 @@ export function ResultsScreen({ score, onRestart }: ResultsScreenProps) {
   const handleShare = async () => {
     const shareText = `I just took the Signal Creator Quiz and found out that I'm a ${result.title}. Discover your creator type here:`
 
-    console.log("🔍 Share Debug:", { isMiniApp, hasSDK: !!sdk, hasSdkActions: !!sdk?.actions, hasComposeCast: !!sdk?.actions?.composeCast })
+    console.log("🔍 Share Debug:", {
+      isMiniApp,
+      hasSDK: !!sdk,
+      hasSdkActions: !!sdk?.actions,
+      hasComposeCast: !!sdk?.actions?.composeCast,
+      shareImageUrl: result.shareImageUrl
+    })
 
     // Always use Farcaster sharing when in mini app
     if (isMiniApp) {
       try {
-        console.log("📝 Opening Farcaster composer...")
+        console.log("📝 Opening Farcaster composer with dynamic image...")
         const composeResult = await sdk.actions.composeCast({
           text: shareText,
-          embeds: [MINIAPP_CONFIG.HOME_URL],
+          embeds: [result.shareImageUrl, MINIAPP_CONFIG.HOME_URL],
         })
         console.log("✅ Composer result:", composeResult)
       } catch (error) {
