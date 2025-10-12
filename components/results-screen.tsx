@@ -237,7 +237,7 @@ export function ResultsScreen({ score, onRestart }: ResultsScreenProps) {
           */}
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center pt-4">
-            <Button onClick={handleShare} variant="outline" size="lg" className="rounded-full bg-transparent">
+            <Button onClick={handleShare} size="lg" className="rounded-full px-8">
               Share Results
             </Button>
             <Button onClick={onRestart} variant="outline" size="lg" className="rounded-full bg-transparent">
