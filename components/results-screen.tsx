@@ -44,29 +44,30 @@ export function ResultsScreen({ score, onRestart }: ResultsScreenProps) {
 
   const handleShare = async () => {
     const shareText = `I just took the Signal Creator Quiz and found out that I'm a ${result.title}. Discover your creator type here:`
+    const resultShareUrl = `https://signal-creator-quiz-v1-pdml.vercel.app/result/${result.shareUrlSlug}`
 
     console.log("🔍 Share Debug:", {
       isMiniApp,
       hasSDK: !!sdk,
       hasSdkActions: !!sdk?.actions,
       hasComposeCast: !!sdk?.actions?.composeCast,
-      shareImageUrl: result.shareImageUrl
+      resultShareUrl
     })
 
     // Always use Farcaster sharing when in mini app
     if (isMiniApp) {
       try {
-        console.log("📝 Opening Farcaster composer with dynamic image...")
+        console.log("📝 Opening Farcaster composer with result embed...")
         const composeResult = await sdk.actions.composeCast({
           text: shareText,
-          embeds: [result.shareImageUrl, MINIAPP_CONFIG.HOME_URL],
+          embeds: [resultShareUrl],
         })
         console.log("✅ Composer result:", composeResult)
       } catch (error) {
         console.error("❌ Failed to compose cast:", error)
         // Fallback to clipboard only if composeCast fails
         try {
-          await navigator.clipboard.writeText(`${shareText} ${MINIAPP_CONFIG.HOME_URL}`)
+          await navigator.clipboard.writeText(`${shareText} ${resultShareUrl}`)
           alert("Failed to open composer. Text copied to clipboard!")
         } catch (clipboardError) {
           alert("Failed to open composer and copy to clipboard.")
@@ -75,7 +76,7 @@ export function ResultsScreen({ score, onRestart }: ResultsScreenProps) {
     } else {
       // Fallback for non-Farcaster environments
       console.log("📱 Using fallback share...")
-      const fullText = `${shareText} ${MINIAPP_CONFIG.HOME_URL}`
+      const fullText = `${shareText} ${resultShareUrl}`
       if (navigator.share) {
         try {
           await navigator.share({

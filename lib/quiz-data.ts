@@ -117,6 +117,7 @@ export interface ResultCategory {
   description: string
   emoji: string
   shareImageUrl: string
+  shareUrlSlug: string
 }
 
 export function getResultCategory(score: number): ResultCategory {
@@ -126,6 +127,7 @@ export function getResultCategory(score: number): ResultCategory {
       description: "You're chasing dopamine, but risk burnout.",
       emoji: "📢",
       shareImageUrl: "https://signal-creator-quiz-v1-pdml.vercel.app/share-heavy-noise.png",
+      shareUrlSlug: "heavy-noise",
     }
   } else if (score >= 18 && score <= 25) {
     return {
@@ -133,6 +135,7 @@ export function getResultCategory(score: number): ResultCategory {
       description: "You mix some value, but still fall for algo traps.",
       emoji: "⚠️",
       shareImageUrl: "https://signal-creator-quiz-v1-pdml.vercel.app/share-leaning-noise.png",
+      shareUrlSlug: "leaning-noise",
     }
   } else if (score >= 26 && score <= 33) {
     return {
@@ -140,6 +143,7 @@ export function getResultCategory(score: number): ResultCategory {
       description: "You're on the path to reputation and algo-resistance.",
       emoji: "✨",
       shareImageUrl: "https://signal-creator-quiz-v1-pdml.vercel.app/share-leaning-signal.png",
+      shareUrlSlug: "leaning-signal",
     }
   } else {
     return {
@@ -147,6 +151,7 @@ export function getResultCategory(score: number): ResultCategory {
       description: "You give value freely, build trust, and play the long game.",
       emoji: "🎯",
       shareImageUrl: "https://signal-creator-quiz-v1-pdml.vercel.app/share-strong-signal.png",
+      shareUrlSlug: "strong-signal",
     }
   }
 }
