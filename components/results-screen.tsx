@@ -45,29 +45,42 @@ export function ResultsScreen({ score, onRestart }: ResultsScreenProps) {
   const handleShare = async () => {
     const shareText = `I just took the Signal Creator Quiz and found out that I'm a ${result.title}. Discover your creator type here:`
 
-    if (isMiniApp) {
+    console.log("🔍 Share Debug:", { isMiniApp, hasSDK: !!sdk, hasSdkActions: !!sdk?.actions })
+
+    if (isMiniApp && sdk?.actions?.composeCast) {
       // Use Farcaster's composeCast action
       try {
-        await sdk.actions.composeCast({
+        console.log("📝 Opening Farcaster composer...")
+        const result = await sdk.actions.composeCast({
           text: shareText,
           embeds: [MINIAPP_CONFIG.HOME_URL],
         })
+        console.log("✅ Composer result:", result)
       } catch (error) {
-        console.error("Failed to compose cast:", error)
+        console.error("❌ Failed to compose cast:", error)
         // Fallback to clipboard
-        navigator.clipboard.writeText(`${shareText} ${MINIAPP_CONFIG.HOME_URL}`)
-        alert("Failed to open composer. Text copied to clipboard!")
+        try {
+          await navigator.clipboard.writeText(`${shareText} ${MINIAPP_CONFIG.HOME_URL}`)
+          alert("Failed to open composer. Text copied to clipboard!")
+        } catch (clipboardError) {
+          alert("Failed to open composer and copy to clipboard.")
+        }
       }
     } else {
       // Fallback for non-Farcaster environments
+      console.log("📱 Using fallback share...")
       const fullText = `${shareText} ${MINIAPP_CONFIG.HOME_URL}`
       if (navigator.share) {
-        navigator.share({
-          title: "Signal Creator Quiz Results",
-          text: fullText,
-        })
+        try {
+          await navigator.share({
+            title: "Signal Creator Quiz Results",
+            text: fullText,
+          })
+        } catch (error) {
+          console.log("Share cancelled or failed:", error)
+        }
       } else {
-        navigator.clipboard.writeText(fullText)
+        await navigator.clipboard.writeText(fullText)
         alert("Results copied to clipboard!")
       }
     }
