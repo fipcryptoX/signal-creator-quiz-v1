@@ -45,20 +45,20 @@ export function ResultsScreen({ score, onRestart }: ResultsScreenProps) {
   const handleShare = async () => {
     const shareText = `I just took the Signal Creator Quiz and found out that I'm a ${result.title}. Discover your creator type here:`
 
-    console.log("🔍 Share Debug:", { isMiniApp, hasSDK: !!sdk, hasSdkActions: !!sdk?.actions })
+    console.log("🔍 Share Debug:", { isMiniApp, hasSDK: !!sdk, hasSdkActions: !!sdk?.actions, hasComposeCast: !!sdk?.actions?.composeCast })
 
-    if (isMiniApp && sdk?.actions?.composeCast) {
-      // Use Farcaster's composeCast action
+    // Always use Farcaster sharing when in mini app
+    if (isMiniApp) {
       try {
         console.log("📝 Opening Farcaster composer...")
-        const result = await sdk.actions.composeCast({
+        const composeResult = await sdk.actions.composeCast({
           text: shareText,
           embeds: [MINIAPP_CONFIG.HOME_URL],
         })
-        console.log("✅ Composer result:", result)
+        console.log("✅ Composer result:", composeResult)
       } catch (error) {
         console.error("❌ Failed to compose cast:", error)
-        // Fallback to clipboard
+        // Fallback to clipboard only if composeCast fails
         try {
           await navigator.clipboard.writeText(`${shareText} ${MINIAPP_CONFIG.HOME_URL}`)
           alert("Failed to open composer. Text copied to clipboard!")
