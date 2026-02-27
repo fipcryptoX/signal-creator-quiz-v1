@@ -16,7 +16,14 @@
       "Bash(do echo \"$img:\")",
       "Bash(done)",
       "Bash(python3:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "WebSearch",
+      "WebFetch(domain:docs.farcaster.xyz)",
+      "WebFetch(domain:miniapps.farcaster.xyz)",
+      "WebFetch(domain:signal-creator-quiz-v1-pdml.vercel.app)",
+      "Bash(while read img)",
+      "Bash(for img in public/icon.png public/splash.png)",
+      "Bash(git rebase --continue)"
     ],
     "deny": [],
     "ask": []
